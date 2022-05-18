@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<header>
+    <title>Snake Box</title>
+    <link rel="stylesheet" href="theme.css"/>
+    <script src="main.js"></script>
+    <script src="touchcontrols.js"></script>
+</header>
+<body>
+    <canvas id="game">
+        HTML5 not supported
+    </canvas>
+    <div class="statusCode">
+        Loading...
+    </div>
+
+    <script>
+        window.addEventListener("load", (e) => {
+            init();
+            update();
+
+            if(deviceType() === "desktop"){
+                var game = document.body.querySelector("#game");
+                var status = document.body.querySelector(".statusCode");
+                game.style.width = "400px";
+                game.style.height = "400px";
+                status.style.width = "400px";
+                status.style.fontSize = "1em";
+            }else{
+                initTouchControls();
+            }
+        });
+    </script>
+</body>
+</html>
